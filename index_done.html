@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src=http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js></script>
+
+<style>
+    html{
+        height: 800px;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    table tr{
+        background-color: #f7f7f7;
+    }
+    .detail{
+        background-color: #f7f7f7;
+    }
+
+    .detailbox{
+        height: 100px;
+        background-color: #f4f4f4!important;
+        border-top:1px solid #5e49da;
+    }
+
+    .hide{
+     display: none;
+    }
+
+    .xq{
+        cursor: pointer;
+    }
+
+    .bs-example{
+        width: 721px;
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    table thead th{
+        background-color: #4285f4;
+        color: #FFFFFF;
+    }
+    table thead th p{
+        padding: 8px 16px;
+    }
+
+
+    .xq{
+        text-align: center;
+        width: 100px;
+    }
+    .bq{
+        width: 50px;
+        text-align: right;
+        border-right: none!important;
+      vertical-align: top;
+    }
+    .contents{
+        border-left: none!important;
+    }
+    .xq_text{
+        padding: 10px 20px;
+        /*width: 80%;*/
+    }
+
+    .check-img{
+        width: 20px;
+        height: 20px;
+    }
+
+</style>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+<body>
+<div class="bs-example" data-example-id="bordered-table">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th colspan="3"><p>假设您想开发一种监督式机器学习模型来预测指定的电子邮件是“垃圾邮件”还是“非垃圾邮件”。以下哪些表述正确？</p></th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr>
+            <th class="bq" ><img class="check-img" src="" alt="" ></th>
+            <td class="contents" >们可以对无标签样本运行训练</td>
+            <td class="xq" id="x1" onclick="showdetial('x1','right');"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></td>
+        </tr>
+        <tr  class="hide xq_content detailbox">
+         <td colspan="4">
+             <p class="xq_text">我们将使用有标签样本来训练模型。然后，我们可以对无标签样本运行训练后的模型，以推理无标签的电子邮件是垃圾邮件还是非垃圾邮件。</p>
+         </td>
+        </tr>
+        
+
+
+        <tr>
+            <th class="bq" ><img class="check-img" src="" alt="" ></th>
+            <td class="contents">此任何尚未标记为垃圾邮件或</td>
+            <td class="xq" id="x2" onclick="showdetial('x2','wrong');"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></td>
+        </tr>
+        <tr  class="hide xq_content detailbox">
+            <td colspan="4">
+               <p class="xq_text">我们将使用有标签样本来训练模型。然后，我们可以对无标签样本运行训练后的模型，以推理无标签的电子邮件是垃圾邮件还是非垃圾邮件。</p>
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <th class="bq" ><img class="check-img" src="" alt="" ></th>
+            <td class="contents">主题标头中的字词可能是优质特征</td>
+            <td class="xq" id="x3" onclick="showdetial('x3','right');"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></td>
+        </tr>
+        <tr class="hide xq_content detailbox">
+            <td colspan="4">
+
+                <p class="xq_text">我们将使用有标签样本来训练模型。然后，我们可以对无标签样本运行训练后的模型，以推理无标签的电子邮件是垃圾邮件还是非垃圾邮件。</p>
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <th class="bq" ><img class="check-img" src="" alt="" ></th>
+            <td class="contents">此数据集的标签可能来自将特</td>
+            <td class="xq" id="x4" onclick="showdetial('x4','wrong');"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></td>
+        </tr>
+        <tr class="hide xq_content detailbox">
+            <td colspan="4">
+                <p class="xq_text">当然。此数据集的标签可能来自将特定电子邮件标记为垃圾邮件的电子邮件用户。由于很少的用户会将每一封可疑的电子邮件都标记为垃圾邮件，因此我们可能很难知道某封电子邮件是否是垃圾邮件。此外，有些垃圾内容发布者或僵尸网络可能会故意提供错误标签来误导我们的模型。</p>
+            </td>
+        </tr>
+
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+
+<script>
+
+
+/*可以同时打开，可以同时关闭*/
+/*
+* 思路：
+* 1、让点击元素toggleClass() detail 和 hide就是本来没有detail就有，本来有hide变成没有hide
+*
+* */
+  function showdetial(id,flag) {
+
+   // $("#"+id+"").parent().siblings().removeClass('detail');
+   $("#"+id+"").parent().toggleClass('detail');
+
+   //$(".xq_content").hide();
+   $("#"+id+"").parent().next().toggleClass('hide');
+
+   if($("#"+id+"").parent().hasClass('detail')){
+       $("#"+id+" span").removeClass('glyphicon-menu-down')
+       $("#"+id+" span").addClass('glyphicon-menu-up')
+   }else {
+       $("#"+id+" span").removeClass("glyphicon-menu-up")
+       $("#"+id+" span").addClass("glyphicon-menu-down")
+   }
+
+
+   if (flag == 'right'){
+       $("#"+id+"").parent('tr').find('th').children('img').attr("src","right.jpg")
+      //  console.log("123")
+   }else if (flag == 'wrong'){
+       $("#"+id+"").parent('tr').find('th').children('img').attr("src","wrong.jpg")
+
+   }
+   
+}
+
+
+
+</script>
