@@ -6,6 +6,98 @@
 ### 以下是js代码，代码本生我已经写了很多注释
 
 ```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src=http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js></script>
+
+<style>
+    .detail{
+        background-color: #f2f2f2;
+    }
+
+    .detailbox{
+        height: 100px;
+        background-color: #f4f4f4!important;
+        border-top:1px solid #5e49da;
+    }
+
+    .hide{
+     display: none;
+    }
+
+    .xq{
+        cursor: pointer;
+    }
+
+</style>
+<body>
+<div class="bs-example" data-example-id="bordered-table">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+
+        <tr>
+            <th >1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td class="xq" id="x1" onclick="showdetial('x1');">详情</td>
+        </tr>
+        <tr   class="hide xq_content detailbox">
+         <td colspan="4">
+             这里是你的详情内容
+         </td>
+        </tr>
+
+
+
+        <tr>
+            <th >2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td class="xq" id="x2" onclick="showdetial('x2');">详情</td>
+        </tr>
+        <tr  class="hide xq_content detailbox">
+            <td colspan="4">
+                这里是你的详情内容
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <th >3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td class="xq" id="x3" onclick="showdetial('x3');">详情</td>
+        </tr>
+        <tr class="hide xq_content detailbox">
+            <td colspan="4">
+                这里是你的详情内容
+            </td>
+        </tr>
+
+
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+
 <script>
 /*
 说明
