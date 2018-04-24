@@ -1,9 +1,13 @@
 # toggle_menu
-# 1、同时打开同时关闭。2、可以同时关闭，只能打开一个。3、必须打开一个
+# 1、同时打开同时关闭。
+# 2、可以同时关闭，只能打开一个。
+# 3、必须打开一个
 
 ### 以下是js代码，代码本生我已经写了很多注释
-<p><code>
-  <script>
+
+
+
+<script>
 /*
 说明
 .hide display:none
@@ -70,6 +74,5 @@
 //      $("#"+id+"").parent().next().toggleClass('hide');
 //
 // }
+
 </script>
-</code>
-</p>
